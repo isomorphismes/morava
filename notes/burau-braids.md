@@ -63,4 +63,4 @@ The rendering should carry its own visible response tests: event → changed bra
 - A braid relation should preserve its represented matrix and closed-braid isotopy class, although the *displayed word* changes.
 - Do **not** infer equality of braids from equality of specialized numerical matrices.
 
-This gives a bridge to the separate [swap](https://github.com/isomorphisms/swap) project if that repository's conventions and source model are compatible. Morava and Rolfsen's group-completion / TQFT construction is a later reading path, not a feature that follows just from drawing braids.
+This gives a bridge to the separate [swap](https://github.com/isomorphismes/swap) project if that repository's conventions and source model are compatible. Morava and Rolfsen's group-completion / TQFT construction is a later reading path, not a feature that follows just from drawing braids.
