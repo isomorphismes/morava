@@ -7,38 +7,38 @@ The following is a standard elementary example of the **reduced Burau representa
 ## 1. Two kinds of states to show side by side
 
 The braid group on three strands is
-[
-B_3=langle sigma_1,sigma_2mid
-  sigma_1sigma_2sigma_1=sigma_2sigma_1sigma_2angle.
-]
+\[
+B_3=\langle \sigma_1,\sigma_2\mid
+  \sigma_1\sigma_2\sigma_1=\sigma_2\sigma_1\sigma_2\rangle.
+\]
 The generators exchange adjacent strands with a specified over/under crossing; inverses exchange them in the opposite direction. The positive-generator convention must be displayed in the drawing.
 
-Let (t) be an *invertible* indeterminate. In one common basis for the reduced Burau representation,
-[
-ho(sigma_1)=A=
-  egin{pmatrix}-t&1\\0&1end{pmatrix},
-qquad
-ho(sigma_2)=B=
-  egin{pmatrix}1&0\\t&-tend{pmatrix}.
-]
-The matrices live in (GL_2(mathbb{Z}[t,t^{-1}])), so both have determinant (-t).
+Let \(t\) be an *invertible* indeterminate. In one common basis for the reduced Burau representation,
+\[
+\rho(\sigma_1)=A=
+  \begin{pmatrix}-t&1\\0&1\end{pmatrix},
+\qquad
+\rho(\sigma_2)=B=
+  \begin{pmatrix}1&0\\t&-t\end{pmatrix}.
+\]
+The matrices live in \(GL_2(\mathbb{Z}[t,t^{-1}])\), so both have determinant \(-t\).
 
 Multiplication checks the braid relation exactly:
-[
+\[
 ABA=BAB=
-egin{pmatrix}
+\begin{pmatrix}
  0&-t\\-t^2&0
-end{pmatrix}.
-]
+\end{pmatrix}.
+\]
 The drawing can show the same braid expressed with two words, while the algebra panel shows two equal Laurent-polynomial matrices. This is a **genuine mathematical equality**, not merely a visual similarity.
 
-At (t=1),
-[
-A=egin{pmatrix}-1&1\\0&1end{pmatrix},quad
-B=egin{pmatrix}1&0\\1&-1end{pmatrix},
-quad ABA=egin{pmatrix}0&-1\\-1&0end{pmatrix}.
-]
-Choosing (t=1) throws away braid information; an interactive tool should also let (t) remain formal, rather than silently treating this specialization as faithful.
+At \(t=1\),
+\[
+A=\begin{pmatrix}-1&1\\0&1\end{pmatrix},\quad
+B=\begin{pmatrix}1&0\\1&-1\end{pmatrix},
+\quad ABA=\begin{pmatrix}0&-1\\-1&0\end{pmatrix}.
+\]
+Choosing \(t=1\) throws away braid information; an interactive tool should also let \(t\) remain formal, rather than silently treating this specialization as faithful.
 
 Matrix conventions vary with the choice of basis, whether braids act on the left or right, and which crossing is positive. Match the chosen drawing convention to the matrices and record it.
 
@@ -49,17 +49,17 @@ Cross-check for these matrix conventions: [*Discrete Representations of the Brai
 Three simultaneous views:
 - Three colored strands; tapping a generator adds one explicit crossing, with under-strand occluded.
 - A braid word with a visible cursor and inverse symbols.
-- Its symbolic (2	imes2) matrix, recomputed exactly from the word (or a small chosen numeric specialization).
+- Its symbolic \(2\times2\) matrix, recomputed exactly from the word (or a small chosen numeric specialization).
 
-Tap **σ1**, **σ2**, **σ1⁻¹**, **σ2⁻¹**. Each valid nontrivial edit must alter the displayed word **and** the braid picture; display the algebraic result even if a chosen representation loses information at a special value of (t). Support undo and application of the braid relation to a selected consecutive triple.
+Tap **σ₁**, **σ₂**, **σ₁⁻¹**, **σ₂⁻¹**. Each valid nontrivial edit must alter the displayed word **and** the braid picture; display the algebraic result even if a chosen representation loses information at a special value of \(t\). Support undo and application of the braid relation to a selected consecutive triple.
 
 The rendering should carry its own visible response tests: event → changed braid word → changed geometry/matrix or an explicit reason why the mathematical object is equivalent. A successful event dispatch by itself is not evidence of user-visible change.
 
 ## 3. Mathematical test cases
 
-- (ABA=BAB) as exact Laurent-polynomial matrices.
-- (AA^{-1}=I) and (BB^{-1}=I).
-- (det(ho(eta))=(-t)^{w(eta)}), where (w) is the exponent sum / writhe of the braid word.
+- \(ABA=BAB\) as exact Laurent-polynomial matrices.
+- \(AA^{-1}=I\) and \(BB^{-1}=I\).
+- \(\det(\rho(\beta))=(-t)^{w(\beta)}\), where \(w\) is the exponent sum / writhe of the braid word.
 - A braid relation should preserve its represented matrix and closed-braid isotopy class, although the *displayed word* changes.
 - Do **not** infer equality of braids from equality of specialized numerical matrices.
 
